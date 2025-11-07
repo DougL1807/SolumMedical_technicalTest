@@ -88,6 +88,12 @@ Expected output:
 Get-Content input.txt | python mystic_waves.py
 ```
 
+### Interactive Mode
+
+```bash
+python mystic_waves.py
+```
+
 ### Comprehensive Testing
 
 ```bash
@@ -128,9 +134,3 @@ pytest test_mystic_waves.py -v
 - Well-documented code
 
 ---
-
-## Author
-
-Jingdi Lin  
-November 2025  
-Solum Medical Technical Test
