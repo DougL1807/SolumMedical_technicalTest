@@ -6,10 +6,16 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    open: true, // Automatically open browser on server start
+    open: true,
   },
   build: {
     outDir: "dist",
     sourcemap: false,
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.js",
+    css: true,
   },
 });

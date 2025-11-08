@@ -1,174 +1,215 @@
-# Solum Medical - Login Page
+# Login Page - Question C
 
-A professional login page implementation for Solum Medical's technical assessment (Question C).
+A secure login page with comprehensive validation for Solum Medical technical assessment.
 
-## Project Description
+## Quick Start
 
-This is a frontend-only login page built with React that demonstrates:
+### Installation
 
-- Secure email and password validation
-- User-friendly error messages
-- Responsive design for desktop and mobile
-- Professional UI/UX suitable for healthcare software
-- Clean, maintainable code with comprehensive comments
+```bash
+cd C
+npm install
+npm run dev
+```
 
-## Tech Stack
+The application will open at `http://localhost:5173`
 
-- **Framework**: React 18.3.1
-- **Build Tool**: Vite 5.3.1
-- **Language**: JavaScript (ES6+)
-- **Styling**: Pure CSS3
-- **No external UI libraries** - All components are custom-built
+### Running Tests
 
-## Installation & Setup
-
-### Prerequisites
-
-- Node.js (version 14 or higher)
-- npm or yarn package manager
-
-### Steps
-
-1. **Navigate to the project directory**
-
-   ```bash
-   cd C
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**
-   - The app will run at `http://localhost:5173`
-   - Open this URL in your web browser
+```bash
+npm test              # Run all tests
+npm run test:ui       # Open test UI
+```
 
 ## Test Accounts
 
-Use any of these credentials to test the login functionality:
+Use these credentials to test the login:
 
-| Email              | Password     |
-| ------------------ | ------------ |
-| `doctor@solum.com` | `Test123!`   |
-| `admin@solum.com`  | `Admin2024#` |
-| `test@example.com` | `Pass123$`   |
+```
+doctor@solum.com / Test123!
+admin@solum.com / Admin2024#
+test@example.com / Pass123$
+```
 
 ## Features
 
-### ✅ Email Validation
+### Email Validation
 
-- Cannot be empty
-- Must follow valid email format (contains @ and domain)
-- Must exist in the system (hardcoded valid emails)
-- Clear error message if email not found
+- Required field
+- Must be valid format (user@domain.com)
+- Must exist in the system
+- Shows specific error messages
 
-### ✅ Password Validation
+### Password Validation
 
-- Length: 8-16 characters
-- Must contain:
-  - At least one **uppercase letter** (A-Z)
-  - At least one **lowercase letter** (a-z)
-  - At least one **number** (0-9)
-  - At least one **special character** (!@#$%^&\*()\_+-=[]{}|;:'",.<>?/)
-- Shows specific requirements if validation fails
-- Password visibility toggle button
+Password must meet all requirements:
 
-### ✅ Login Process
+- 8-16 characters in length
+- At least one uppercase letter (A-Z)
+- At least one lowercase letter (a-z)
+- At least one number (0-9)
+- At least one special character (!@#$%^&\* etc.)
 
-- Form validation on submit
-- Loading state during login (prevents double-click)
-- Disabled inputs during processing
-- Credential matching verification
+### Security Features
 
-### ✅ Post-Login Experience
+- Password visibility toggle
+- Form disabled during submission to prevent duplicate requests
+- Input sanitization and validation
+- Clear error messages without exposing sensitive information
 
-- Welcome message with user's email
-- Clean logout functionality
-- Returns to login page on logout
+### User Experience
 
-### ✅ User Experience
-
-- Responsive design (mobile, tablet, desktop)
-- Clear, specific error messages
-- Smooth animations and transitions
+- Responsive design for mobile and desktop
+- Loading state during login
+- Smooth transitions and animations
 - High contrast for readability
-- Accessible form controls
-- "Forgot password?" link (placeholder)
+- Accessible form controls with proper labels
 
-## Validation Rules Summary
+## Validation Rules
 
-### Email Rules:
+### Email
 
-1. Required field (cannot be empty)
-2. Valid format: `example@domain.com`
-3. Must exist in system's user list
+1. Cannot be empty
+2. Must contain @ and domain
+3. Must be registered in the system
 
-### Password Rules:
+### Password
 
-1. Length: 8-16 characters
-2. Complexity requirements:
-   - Uppercase: ✓
-   - Lowercase: ✓
-   - Number: ✓
-   - Special character: ✓
+1. Length between 8-16 characters
+2. Must include:
+   - Uppercase letter
+   - Lowercase letter
+   - Number
+   - Special character
 
-## 🎨 Design Principles
+If any requirement is missing, a specific error message will explain what's needed.
 
-This login page follows healthcare software best practices:
+## Technical Details
 
-- **Clarity**: Error messages are specific and actionable
-- **Simplicity**: Clean interface with minimal distractions
-- **Safety**: Prevents common user errors (double submission, invalid input)
-- **Accessibility**: Proper labels, ARIA attributes, high contrast
-- **Professionalism**: Modern, trustworthy design suitable for medical context
+### Tech Stack
 
-## 🔧 Build for Production
+- React 18.3.1
+- Vite 5.3.1
+- Pure CSS (no UI libraries)
+- Vitest + React Testing Library for testing
+
+### Project Structure
+
+```
+C/
+├── src/
+│   ├── App.jsx          # Main component
+│   ├── App.css          # Styles
+│   ├── main.jsx         # Entry point
+│   └── test/
+│       ├── setup.js     # Test configuration
+│       └── App.test.jsx # Test suite (23 tests)
+├── index.html           # HTML template
+├── package.json         # Dependencies
+├── vite.config.js       # Vite configuration
+└── README.md            # This file
+```
+
+### Test Coverage
+
+The application includes 23 unit tests covering:
+
+- Email validation (format, existence, empty state)
+- Password validation (length, complexity requirements)
+- Login process (success and failure)
+- Logout functionality
+- UI interactions (password toggle, form submission)
+- Edge cases (whitespace, multiple errors, error clearing)
+
+## How It Works
+
+### Login Flow
+
+1. User enters email and password
+2. Form validates on submit
+3. If invalid: shows specific error messages
+4. If valid: simulates login with loading state
+5. On success: displays welcome page with user email
+6. User can logout to return to login page
+
+### Validation Logic
+
+- Email checked against predefined list of valid users
+- Password validated against complexity requirements
+- Credentials matched only if both email exists and password is correct
+- All validation happens on frontend (no backend required)
+
+## Error Messages
+
+The system provides clear, actionable error messages:
+
+**Email errors:**
+
+- "Email address is required"
+- "Please enter a valid email address"
+- "This email address is not registered in our system"
+
+**Password errors:**
+
+- "Password is required"
+- "Password must contain [specific requirements]"
+- "Incorrect password. Please try again"
+
+## Development
+
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-This creates an optimized production build in the `dist/` folder.
+Output will be in the `dist/` directory.
 
-## 📝 Notes
-
-- All validation happens on the frontend (no backend required)
-- User credentials are hardcoded in `App.jsx` for demonstration purposes
-- In a production environment, authentication should be handled by a secure backend API
-- No actual data is stored or transmitted
-
-## 🐛 Troubleshooting
-
-**Port already in use?**
+### Linting
 
 ```bash
-# Vite will automatically try the next available port
-# Or specify a different port:
+npm run lint
+```
+
+## Browser Support
+
+Tested and working on:
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Troubleshooting
+
+### Port already in use
+
+Vite will automatically use the next available port. Or specify a port:
+
+```bash
 npm run dev -- --port 3000
 ```
 
-**Dependencies not installing?**
+### Dependencies won't install
 
 ```bash
-# Clear npm cache and reinstall
 npm cache clean --force
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-## 📞 Contact
+### Tests failing
 
-For questions about this implementation, please refer to the technical assessment instructions.
+Make sure all dependencies are installed:
 
----
+```bash
+npm install
+npm test
+```
 
-**Developed for Solum Medical Technical Assessment**  
-_Question C - Frontend Test: Login Page_
+## Notes
+
+- All validation happens client-side for this demo
+- User credentials are hardcoded in App.jsx
+- In production, authentication should use a secure backend API
+- No data is stored or transmitted

@@ -68,7 +68,8 @@ Simple mathematical pattern:
 ### Quick Run
 
 ```bash
-Get-Content input.txt | python mystic_waves.py
+python mystic_waves.py < input.txt    # Mac/Linux
+Get-Content input.txt | python mystic_waves.py   # Windows
 ```
 
 Expected output:
@@ -85,7 +86,8 @@ Expected output:
 ### Quick Verification
 
 ```bash
-Get-Content input.txt | python mystic_waves.py
+python mystic_waves.py < input.txt    # Mac/Linux
+Get-Content input.txt | python mystic_waves.py   # Windowss
 ```
 
 ### Interactive Mode
