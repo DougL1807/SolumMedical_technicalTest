@@ -24,6 +24,8 @@ Navigate to each folder and follow the README instructions to run the code.
 
 ```bash
 cd QuestionA
+python3 mystic_waves.py
+# Or run input.txt:
 python mystic_waves.py < input.txt    # Mac/Linux
 Get-Content input.txt | python mystic_waves.py   # Windowss
 # Or run tests:
@@ -46,6 +48,8 @@ pytest test_mystic_waves.py
 
 ```bash
 cd QuestionB
+python cargocraft.py
+# Or run input.txt:
 python3 cargocraft.py < input.txt # Mac/Linux
 Get-Content input.txt | python cargocraft.py # Windows
 # Or run tests:
