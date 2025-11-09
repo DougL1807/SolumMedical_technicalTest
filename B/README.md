@@ -205,9 +205,10 @@ If n % 4 == 2: Use 1 Type B craft (6 units) + remaining Type A
 ## File Structure
 
 ```
-QuestionB/
+B/
 ├── cargocraft.py          # Main solution (approximately 300 lines)
 ├── test_cargocraft.py     # Test suite (approximately 200 lines)
+├── .gitignore             # Git-ignored files
 ├── README.md              # This file
 └── input.txt              # Optional: sample input for testing
 ```

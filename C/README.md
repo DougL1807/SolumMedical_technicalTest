@@ -106,6 +106,8 @@ C/
 │       └── App.test.jsx # Test suite (23 tests)
 ├── index.html           # HTML template
 ├── package.json         # Dependencies
+├── package-lock.json    # Lockfile
+├── .gitignore           # Git ignored files
 ├── vite.config.js       # Vite configuration
 └── README.md            # This file
 ```

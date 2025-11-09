@@ -23,7 +23,7 @@ Navigate to each folder and follow the README instructions to run the code.
 **How to run:**
 
 ```bash
-cd QuestionA
+cd A
 python mystic_waves.py
 # Or run input.txt:
 python mystic_waves.py < input.txt    # Mac/Linux
@@ -47,7 +47,7 @@ pytest test_mystic_waves.py
 **How to run:**
 
 ```bash
-cd QuestionB
+cd B
 python cargocraft.py #Press ENTER then Ctrl+Z then Enter (Windows) or Ctrl+D (Mac/Linux).
 # Or run input.txt:
 python cargocraft.py < input.txt # Mac/Linux
@@ -71,7 +71,7 @@ pytest test_cargocraft.py
 **How to run:**
 
 ```bash
-cd QuestionC
+cd C
 npm install
 npm run dev
 # Open http://localhost:5173
@@ -121,15 +121,19 @@ npm test
 ```
 solum-technical-test/
 ├── README.md          # This file
+├── .gitignore
+├── package-lock.json
 ├── A/
 │   ├── mystic_waves.py
 │   ├── test_mystic_waves.py
+│   ├── .gitignore
 │   ├── input.txt
 │   └── README.md
 │
 ├── B/
 │   ├── cargocraft.py
 │   ├── test_cargocraft.py
+│   ├── .gitignore
 │   ├── input.txt
 │   └── README.md
 │
@@ -143,6 +147,7 @@ solum-technical-test/
     │       └── setup.js
     ├── index.html
     ├── package-lock.json
+    ├── .gitignore
     ├── package.json
     ├── vite.config.js
     └── README.md

@@ -113,6 +113,17 @@ pytest test_mystic_waves.py -v
 
 ---
 
+## File Structure
+
+```
+A/
+├── mystic_waves.py        # Main solution
+├── test_mystic_waves.py   # Test suite
+├── .gitignore             # Git-ignored files
+├── README.md              # This file
+└── input.txt              # Optional: sample input for testing
+```
+
 ## Code Features
 
 ### Input Validation
