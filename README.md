@@ -27,7 +27,7 @@ cd QuestionA
 python mystic_waves.py
 # Or run input.txt:
 python mystic_waves.py < input.txt    # Mac/Linux
-Get-Content input.txt | python mystic_waves.py   # Windowss
+Get-Content input.txt | python mystic_waves.py   # Windows
 # Or run tests:
 pytest test_mystic_waves.py
 ```
@@ -48,7 +48,7 @@ pytest test_mystic_waves.py
 
 ```bash
 cd QuestionB
-python cargocraft.py
+python cargocraft.py #Press ENTER then Ctrl+Z then Enter (Windows) or Ctrl+D (Mac/Linux).
 # Or run input.txt:
 python cargocraft.py < input.txt # Mac/Linux
 Get-Content input.txt | python cargocraft.py # Windows
